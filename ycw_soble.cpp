@@ -27,6 +27,7 @@ int main(int argc,char** argv){
  Mat abs_grad_x,abs_grad_y;
  Sobel(src_gray,grad_x,ddepth,1,0,3,scale,delta,BORDER_DEFAULT);
  convertScaleAbs(grad_x,abs_grad_y);
+ Sobel(src_gray,grad_y,ddepth,0,1,3,scale,delta,BORDER_DEFAULT);
  addWeighted(abs_grad_x,0.5,abs_grad_y,0.5,0,grad);
  imshow("Soble Degree",grad);
  waitKey(0);
